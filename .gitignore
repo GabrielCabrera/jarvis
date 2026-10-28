@@ -43,3 +43,15 @@ dotfiles/config/.config/1Password/
 dotfiles/config/.config/op/
 dotfiles/config/.config/wireshark/
 dotfiles/config/.config/gh/hosts.yml
+
+# Gemini & Antigravity local state / secrets protection
+dotfiles/gemini/.gemini/antigravity/brain/
+dotfiles/gemini/.gemini/antigravity-cli/brain/
+dotfiles/gemini/.gemini/antigravity-cli/conversations/
+dotfiles/gemini/.gemini/antigravity-cli/history.jsonl
+dotfiles/gemini/.gemini/antigravity-cli/log/
+dotfiles/gemini/.gemini/antigravity-cli/cache/
+dotfiles/gemini/.gemini/antigravity-cli/crashes/
+*credentials*
+*token*
+*auth*

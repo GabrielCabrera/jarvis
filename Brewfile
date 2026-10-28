@@ -30,6 +30,8 @@ brew "glow"
 brew "helm"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Kubernetes command-line interface

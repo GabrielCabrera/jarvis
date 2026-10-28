@@ -24,6 +24,7 @@ Unified Infrastructure as Code (IaC) and Developer Environment management for ma
 ├── bin/                 # Local helper binaries
 ├── dotfiles/            # Managed Stow packages
 │   ├── config/          # ~/.config applications (bat, btop, gh, ghostty, etc.)
+│   ├── gemini/          # ~/.gemini/antigravity-cli (statusline.sh, title.sh, settings.json)
 │   ├── git/             # ~/.gitconfig and ~/.gitignore
 │   ├── ruby/            # ~/.gemrc
 │   ├── ssh/             # ~/.ssh/config, allowed_signers, ssh_hosts/

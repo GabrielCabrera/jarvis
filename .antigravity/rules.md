@@ -8,7 +8,8 @@
 ## 2. Managed Technology Stack
 - **Package Management**: Homebrew declarative bundle via `~/Developer/jarvis/Brewfile`.
 - **Runtime & Language Tooling**: `mise` (`~/.config/mise/config.toml`).
-- **Symlink Management**: `GNU Stow`. Always use `--no-folding` flag to prevent directory folding into monolithic symlinks (`stow -d ~/Developer/jarvis/dotfiles -t ~ --no-folding <packages>`).
+- **Symlink Management**: `GNU Stow`. Always use `--no-folding` flag to prevent directory folding into monolithic symlinks (`stow -d ~/Developer/jarvis/dotfiles -t ~ --no-folding <packages>`). Managed packages: `config`, `gemini`, `git`, `ruby`, `ssh`, `zsh`.
+- **AI Tooling & CLI**: Antigravity CLI (`gemini` package in `dotfiles/gemini/.gemini/antigravity-cli/`: `statusline.sh`, `title.sh`, and audited `settings.json`).
 - **Shell & Terminal**: `Zsh` (`~/.zshrc`, `~/.zsh/`), `Ghostty`, `Starship` prompt.
 - **Editor**: `Neovim` (`~/.config/nvim/`).
 - **VCS**: `Git` (`~/.gitconfig`, `~/.gitignore`).
@@ -32,8 +33,8 @@ No future task or user request is considered complete without updating:
 
 ## 5. Security & Isolation Directives
 - **Physical vs Symlinked directories**:
-  - `~/.ssh` and `~/.config` must ALWAYS remain real physical directories in `$HOME`. Never turn them into monolithic symlinks.
-  - Local state and credentials (e.g., `~/.config/1Password/`, `~/.config/op/`, `~/.config/wireshark/`, `~/.config/gh/hosts.yml`) remain local physical files/directories in `$HOME/.config/` and are never committed.
+  - `~/.ssh`, `~/.config`, and `~/.gemini` must ALWAYS remain real physical directories in `$HOME`. Never turn them into monolithic symlinks.
+  - Local state and credentials (e.g., `~/.config/1Password/`, `~/.config/op/`, `~/.config/wireshark/`, `~/.config/gh/hosts.yml`, `~/.gemini/antigravity/brain/`, session DBs, and logs) remain local physical files/directories and are never committed.
   - Shell history (`~/.zsh_history`) is a local physical file with permissions `0600`.
 - **Communication Style**:
   - Respond to the user in Spanish, direct and technical.

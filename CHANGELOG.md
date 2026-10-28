@@ -2,6 +2,17 @@
 
 All notable changes to the `jarvis` Control Plane are documented in this file.
 
+## [Unreleased] - 2026-10-28
+
+### Added
+- **Antigravity CLI Optimization (`gemini` Stow package)**:
+  - Created `dotfiles/gemini/.gemini/antigravity-cli/title.sh` with single-pass `jq` parsing and `tool_confirmation_pending` alerts for Ghostty tab titles.
+  - Created `dotfiles/gemini/.gemini/antigravity-cli/statusline.sh` with single `jq` invocation (`@sh` safe eval), 10-segment visual context bar, and Git branch caching (5s TTL in `/tmp`).
+  - Versioned audited `settings.json` configuring `statusLine` and `title` without sensitive data or tokens.
+  - Added `jq` formula (v1.8.2) to `Brewfile`.
+  - Updated `scripts/stow.sh` and `AGENTS.md` to include `gemini` in the managed stow packages.
+  - Added defensive `.gitignore` rules for `~/.gemini/` brain state, conversation logs, and credential patterns.
+
 ## [Initial Setup] - 2026-10-28
 
 ### Added

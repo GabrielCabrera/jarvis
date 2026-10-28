@@ -1,0 +1,48 @@
+{
+  "editor": "nvim",
+  "model": "Gemini 3.8 Flash (High)",
+  "notifications": true,
+  "permissions": {
+    "allow": [
+      "command(cat)",
+      "command(grep)",
+      "command(op)",
+      "command(ls)",
+      "command(unzip)",
+      "command(git)",
+      "command(openssl)",
+      "command(whois)",
+      "command(dig)",
+      "command(pwd)",
+      "command(tar)",
+      "command(head)",
+      "command(echo)",
+      "command(cp)",
+      "command(tail)",
+      "command(stow)",
+      "command(info)",
+      "command(mv)",
+      "command(which)",
+      "command(brew)",
+      "command(jq)",
+      "command(mkdir)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.gemini/antigravity-cli/statusline.sh",
+    "enabled": true
+  },
+  "title": {
+    "type": "command",
+    "command": "~/.gemini/antigravity-cli/title.sh"
+  },
+  "trustedWorkspaces": [
+    "/Users/gabriel/dotfiles",
+    "/Users/gabriel/Developer/Certificados",
+    "/Users/gabriel/Developer/soa",
+    "/Users/gabriel/Developer",
+    "/Users/gabriel/Developer/yourls",
+    "/Users/gabriel/Developer/jarvis"
+  ]
+}

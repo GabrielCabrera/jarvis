@@ -10,7 +10,7 @@
 ## 1. Tooling & Runtimes Inventory
 
 ### Package Management: Homebrew (`~/Developer/jarvis/Brewfile`)
-- **CLI Utilities & Infrastructure:** `age`, `ansible`, `awscli`, `azure-cli`, `bat`, `btop`, `colima`, `docker`, `docker-compose`, `eza`, `fzf`, `gh`, `git`, `glow`, `helm`, `jemalloc`, `k9s`, `kubernetes-cli`, `kubeseal`, `tree-sitter`, `neovim`, `pandoc`, `protobuf`, `pwgen`, `restic`, `ripgrep`, `sops`, `sqlcmd`, `starship`, `stow`, `tlrc`, `tree-sitter-cli`, `wireshark`, `zsh-autosuggestions`, `zsh-syntax-highlighting` (32 formulas).
+- **CLI Utilities & Infrastructure:** `age`, `ansible`, `awscli`, `azure-cli`, `bat`, `btop`, `colima`, `docker`, `docker-compose`, `eza`, `fzf`, `gh`, `git`, `glow`, `helm`, `jemalloc`, `jq`, `k9s`, `kubernetes-cli`, `kubeseal`, `tree-sitter`, `neovim`, `pandoc`, `protobuf`, `pwgen`, `restic`, `ripgrep`, `sops`, `sqlcmd`, `starship`, `stow`, `tlrc`, `tree-sitter-cli`, `wireshark`, `zsh-autosuggestions`, `zsh-syntax-highlighting` (33 formulas).
 - **Casks:** `1password-cli`, `font-jetbrains-mono-nerd-font` (2 casks).
 - **Node Tools:** `corepack` (1 npm).
 
@@ -45,6 +45,9 @@ Stow command standard:
 | `config` | `dotfiles/config/.config/mise/` | `~/.config/mise/config.toml` | Unfolded (`--no-folding`) |
 | `config` | `dotfiles/config/.config/nvim/` | `~/.config/nvim/` | Unfolded (`--no-folding`) |
 | `config` | `dotfiles/config/.config/starship/` | `~/.config/starship/starship.toml` | Unfolded (`--no-folding`) |
+| `gemini` | `dotfiles/gemini/.gemini/antigravity-cli/settings.json` | `~/.gemini/antigravity-cli/settings.json` | Unfolded (`--no-folding`) |
+| `gemini` | `dotfiles/gemini/.gemini/antigravity-cli/statusline.sh` | `~/.gemini/antigravity-cli/statusline.sh` | Unfolded (`--no-folding`) |
+| `gemini` | `dotfiles/gemini/.gemini/antigravity-cli/title.sh` | `~/.gemini/antigravity-cli/title.sh` | Unfolded (`--no-folding`) |
 | `git` | `dotfiles/git/.gitconfig` | `~/.gitconfig` | Direct link |
 | `git` | `dotfiles/git/.gitignore` | `~/.gitignore` | Direct link (`.stow-local-ignore`) |
 | `ruby` | `dotfiles/ruby/.gemrc` | `~/.gemrc` | Direct link |
@@ -73,6 +76,8 @@ The following assets reside purely as physical files/directories on disk and are
   - `sops/age/keys.txt` (Local Age master secret key for SOPS decryption, permissions `0600`).
 - **`~/.zsh_history` (Physical file, `0600`):**
   - Zsh command history preserved locally.
+- **`~/.gemini/` (Real physical directory):**
+  - Antigravity sessions, brain memory (`brain/`), conversation logs, conversation summaries databases (`*.db*`), and history (`history.jsonl`) remain strictly local and unversioned.
 
 ---
 
@@ -83,4 +88,5 @@ The following assets reside purely as physical files/directories on disk and are
 - `mise ls`: OK (All runtimes active).
 - `starship --version`: OK (v1.27.0).
 - `zsh -n ~/.zshrc`: OK (Syntax valid).
+- `title.sh` & `statusline.sh`: OK (Tested dry-run with stdin JSON, exit code 0).
 - Legacy directory: `~/dotfiles.bak_pre_jarvis` preserved.
