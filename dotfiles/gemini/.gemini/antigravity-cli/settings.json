@@ -25,7 +25,10 @@
       "command(which)",
       "command(brew)",
       "command(jq)",
-      "command(mkdir)"
+      "command(mkdir)",
+      "command(ps)",
+      "command(diff)",
+      "command(ln)"
     ]
   },
   "statusLine": {
