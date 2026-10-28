@@ -1,0 +1,14 @@
+# Deshabilita la generación de documentación (Ahorro de ~40% tiempo instalación)
+gem: --no-document
+
+# Muestra el progreso de instalación en tiempo real
+:verbose: true
+
+# Actualiza las fuentes de gemas automáticamente si es necesario
+:update_sources: true
+
+# Optimización de I/O para instalaciones masivas
+:bulk_threshold: 1000
+
+# Evita backtraces ruidosos a menos que sea un error crítico
+:backtrace: false

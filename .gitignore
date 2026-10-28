@@ -1,0 +1,45 @@
+# ==============================================================================
+# Jarvis Control Plane - Defense-in-Depth Git Ignore
+# ==============================================================================
+
+# OS & Workspace Artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.antigravity-ide/
+
+# Ephemeral & Logs
+tmp/
+*.log
+*.tar.gz
+*.zip
+
+# Secrets & Environment variables
+.env
+.env.*
+!.env.example
+*.local
+
+# Shell History & Credentials
+.zsh_history
+.bash_history
+.zsh_secrets
+
+# SSH Keys and Strict Allowlist Protection
+dotfiles/ssh/.ssh/keys/
+dotfiles/ssh/.ssh/deprecated_keys/
+dotfiles/ssh/.ssh/known_hosts*
+dotfiles/ssh/.ssh/id_*
+dotfiles/ssh/.ssh/*_ed25519*
+dotfiles/ssh/.ssh/*_key*
+*.pem
+*.key
+*sealed*.yaml
+
+# Local application state (should never be versioned in dotfiles)
+dotfiles/config/.config/1Password/
+dotfiles/config/.config/op/
+dotfiles/config/.config/wireshark/
+dotfiles/config/.config/gh/hosts.yml

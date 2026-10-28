@@ -1,0 +1,25 @@
+# ==============================================================================
+# MISE CONFIGURATION
+# Context: MacOS M3 (Apple Silicon) | Strategy: Rolling Release / Performance
+# ==============================================================================
+
+[tools]
+ruby = "latest"    # Latest stable Ruby
+node = "lts"       # Long Term Support Node.js
+python = "latest"  # Latest stable Python
+rust = "latest"    # Latest stable Rust
+lua = "latest"     # Latest stable Lua
+usage = "latest"   # CLI help/completions utility (highly recommended with Mise)
+
+[settings]
+# Core Behavior
+legacy_version_file = true      # Support .ruby-version, .nvmrc, .python-version
+experimental = true             # Unlock advanced features (performance tweaks)
+not_found_auto_install = false  # Explicit behavior: fail if tool is missing
+
+# Performance Optimization (M3 Specific)
+jobs = 8                        # Utilize efficiency cores for parallel installs
+always_keep_download = false    # Save disk space, clean tarballs immediately
+auto_update = true
+
+
