@@ -5,6 +5,8 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 ## [Unreleased] - 2026-10-29
 
 ### Changed
+- **Antigravity Terminal Title Formatting**:
+  - Adjusted Ghostty tab title badge spacing to `[ <project> | <mode> ]` (e.g., `[ jarvis | STD ]`) for improved readability.
 - **Antigravity Statusline Quota Telemetry**:
   - Implemented dynamic model provider routing (`gemini` vs `3p`) in `statusline.sh` to prevent inactive 3P buckets from masking Gemini consumption.
   - Replaced single static quota indicator with dual-horizon observability: immediate operational burst window (`🔋 XX% (5h)`) and weekly budget window (`📅 YY% (sem)`).

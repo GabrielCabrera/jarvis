@@ -13,8 +13,8 @@ jq -r '
   (.cycle_mode // "std" | ascii_upcase) as $mode |
   (.conversation_title // "") as $title |
   if ($title | length) > 0 then
-    "\($state) [\($proj) | \($mode)] — \($title)"
+    "\($state) [ \($proj) | \($mode) ] — \($title)"
   else
-    "\($state) [\($proj) | \($mode)]"
+    "\($state) [ \($proj) | \($mode) ]"
   end
 ' 2>/dev/null || echo "agy"
