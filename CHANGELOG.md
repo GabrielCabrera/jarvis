@@ -8,6 +8,7 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 - **Antigravity Statusline Quota Telemetry**:
   - Implemented dynamic model provider routing (`gemini` vs `3p`) in `statusline.sh` to prevent inactive 3P buckets from masking Gemini consumption.
   - Replaced single static quota indicator with dual-horizon observability: immediate operational burst window (`🔋 XX% (5h)`) and weekly budget window (`📅 YY% (sem)`).
+  - Added dynamic battery icon transitioning between full (`🔋`) and critical/low battery (`🪫` at <= 20%).
   - Added color-coded urgency thresholds (Yellow/Red) for quota degradation.
   - Added safe fallback variable initialization before `eval` to prevent shell unbound variable crashes on empty or partial JSON payloads.
 

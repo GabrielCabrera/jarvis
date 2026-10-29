@@ -130,10 +130,15 @@ EXTRAS=""
 (( TASKS > 0 ))      && EXTRAS+=" ${DIM}│${RST} ⏳ ${TASKS}"
 (( ARTIFACTS > 0 ))  && EXTRAS+=" ${DIM}│${RST} 📄 ${ARTIFACTS}"
 if (( Q_5H >= 0 )); then
+  BAT_ICON="🔋"
   CLR=""
-  (( Q_5H <= 15 )) && CLR="$RED"
-  (( Q_5H > 15 && Q_5H <= 40 )) && CLR="$YLW"
-  EXTRAS+=" ${DIM}│${RST} ${CLR}🔋 ${Q_5H}% (5h)${RST}"
+  if (( Q_5H <= 20 )); then
+    BAT_ICON="🪫"
+    CLR="$RED"
+  elif (( Q_5H <= 40 )); then
+    CLR="$YLW"
+  fi
+  EXTRAS+=" ${DIM}│${RST} ${CLR}${BAT_ICON} ${Q_5H}% (5h)${RST}"
 fi
 if (( Q_WEEK >= 0 )); then
   CLR=""
