@@ -73,4 +73,3 @@ brew "zsh-syntax-highlighting"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-jetbrains-mono-nerd-font"
-npm "corepack"

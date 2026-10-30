@@ -4,6 +4,13 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 
 ## [Unreleased] - 2026-10-30
 
+### Changed
+- **Mise Runtime Optimization & Lean Toolchain**:
+  - Streamlined `dotfiles/config/.config/mise/config.toml` to a minimalist bare-metal setup: retained `python` (latest), `ruby` (latest), `usage` (latest), and added `uv` (v0.13.6).
+  - Uninstalled redundant runtimes (`node`, `lua`, `rust`) from `~/.local/share/mise/installs/` to eliminate memory and disk overhead.
+  - Enabled native `python.uv_venv_auto = true` and `env_cache = true` for high-efficiency environment transitions and instant virtualenv handling.
+  - Removed obsolete `npm "corepack"` formula from `Brewfile`.
+
 ### Fixed
 - **Antigravity Settings Symlink Auto-Reconciliation**:
   - Identified that Antigravity CLI performs atomic file writes via `rename(2)` when persisting allowed command permissions, replacing the destination symlink `~/.gemini/antigravity-cli/settings.json` with a regular file.

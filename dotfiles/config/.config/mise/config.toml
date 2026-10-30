@@ -1,25 +1,28 @@
 # ==============================================================================
 # MISE CONFIGURATION
-# Context: MacOS M3 (Apple Silicon) | Strategy: Rolling Release / Performance
+# Context: MacOS M3 (Apple Silicon) | Strategy: Minimalist & Clean
 # ==============================================================================
 
 [tools]
-ruby = "latest"    # Latest stable Ruby
-node = "lts"       # Long Term Support Node.js
-python = "latest"  # Latest stable Python
-rust = "latest"    # Latest stable Rust
-lua = "latest"     # Latest stable Lua
-usage = "latest"   # CLI help/completions utility (highly recommended with Mise)
+ruby = "latest"    # Preferred language for personal scripts
+python = "latest"  # Systems automation and audits
+uv = "latest"      # Ultra-fast Python package installer and venv manager
+usage = "latest"   # Shell completions and CLI spec utility (~15MB)
 
 [settings]
 # Core Behavior
-legacy_version_file = true      # Support .ruby-version, .nvmrc, .python-version
-experimental = true             # Unlock advanced features (performance tweaks)
+legacy_version_file = true      # Support .ruby-version, .python-version
+experimental = true             # Unlock advanced features
 not_found_auto_install = false  # Explicit behavior: fail if tool is missing
 
-# Performance Optimization (M3 Specific)
-jobs = 8                        # Utilize efficiency cores for parallel installs
-always_keep_download = false    # Save disk space, clean tarballs immediately
-auto_update = true
+# Performance Optimization (Apple Silicon M3 Pro)
+jobs = 8                        # Parallel tasks / compile jobs
+always_keep_download = false    # Clean download cache immediately
+env_cache = true                # Cache environment calculations for faster cd
 
+# Ecosystem Integrations
+python.uv_venv_auto = true      # Auto-create and activate venvs via uv
 
+[settings.self_update]
+auto = true
+check_duration = "7d"

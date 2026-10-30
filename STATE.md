@@ -12,17 +12,15 @@
 ### Package Management: Homebrew (`~/Developer/jarvis/Brewfile`)
 - **CLI Utilities & Infrastructure:** `age`, `ansible`, `awscli`, `azure-cli`, `bat`, `btop`, `colima`, `docker`, `docker-compose`, `eza`, `fzf`, `gh`, `git`, `glow`, `helm`, `jemalloc`, `jq`, `k9s`, `kubernetes-cli`, `kubeseal`, `tree-sitter`, `neovim`, `pandoc`, `protobuf`, `pwgen`, `restic`, `ripgrep`, `sops`, `sqlcmd`, `starship`, `stow`, `tlrc`, `tree-sitter-cli`, `wireshark`, `zsh-autosuggestions`, `zsh-syntax-highlighting` (33 formulas).
 - **Casks:** `1password-cli`, `font-jetbrains-mono-nerd-font` (2 casks).
-- **Node Tools:** `corepack` (1 npm).
+- **Node Tools:** None (purged unneeded corepack).
 
 ### Runtime & Language Tooling (`mise`)
 Configuration source: `~/.config/mise/config.toml` (managed via `jarvis/dotfiles/config/.config/mise/config.toml`)
 Active versions:
-- `lua`: 5.5.1
-- `node`: 24.22.1 (LTS channel)
 - `python`: 3.15.2 (Latest stable)
 - `ruby`: 4.0.9 (Latest stable)
-- `rust`: 1.99.1 (Latest stable)
 - `usage`: 7.1.3 (Latest stable)
+- `uv`: 0.13.6 (Latest stable)
 
 ---
 
@@ -85,7 +83,8 @@ The following assets reside purely as physical files/directories on disk and are
 - `ssh -G github.com`: OK (Resolves `ssh.github.com:443`, `user git`).
 - `ssh -G shortener`: OK (Resolves host in `ssh_hosts/realtime_shortener`).
 - `git config --list`: OK (Resolves commit GPG/SSH signing via 1Password and `allowed_signers`).
-- `mise ls`: OK (All runtimes active).
+- `mise ls`: OK (All runtimes active: python 3.15, ruby 4.0, uv 0.13, usage 7.1).
+- `uv --version`: OK (v0.13.6).
 - `starship --version`: OK (v1.27.0).
 - `zsh -n ~/.zshrc`: OK (Syntax valid).
 - `title.sh` & `statusline.sh`: OK (Tested dry-run with stdin JSON, exit code 0).
