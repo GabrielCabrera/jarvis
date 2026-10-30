@@ -44,7 +44,10 @@
       "command(npm list)",
       "command(usage)",
       "command(colima)",
-      "command(du)"
+      "command(du)",
+      "command(sleep)",
+      "command(agy)",
+      "command(claude)"
     ]
   },
   "statusLine": {
