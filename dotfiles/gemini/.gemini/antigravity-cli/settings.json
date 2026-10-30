@@ -38,7 +38,13 @@
       "command(scutil)",
       "command(docker)",
       "command(file)",
-      "command(~/Developer/jarvis/scripts/stow.sh)"
+      "command(~/Developer/jarvis/scripts/stow.sh)",
+      "command(mise)",
+      "command(luarocks)",
+      "command(npm list)",
+      "command(usage)",
+      "command(colima)",
+      "command(du)"
     ]
   },
   "statusLine": {
