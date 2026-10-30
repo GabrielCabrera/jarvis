@@ -5,6 +5,10 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 ## [Unreleased] - 2026-10-29
 
 ### Changed
+- **SSH Host Collision Resolution (`realtime_soa_prod`)**:
+  - Prefixed internal cluster host definitions in `dotfiles/ssh/.ssh/ssh_hosts/realtime_soa_prod` with `soa-prod-*` (`soa-prod-nginx-plus`, `soa-prod-core-01`, `soa-prod-io-worker`, etc.).
+  - Restored primary `nginx-plus` resolution directly to public Azure host `20.124.177.51` (`azureuser`, `nginx_plus_standard_key.pem`, no ProxyJump).
+  - Eliminated namespace collisions with active servers in `~/.ssh/config` caused by top-level inclusion.
 - **Antigravity Terminal Title Formatting**:
   - Adjusted Ghostty tab title badge spacing to `[ <project> | <mode> ]` (e.g., `[ jarvis | STD ]`) for improved readability.
 - **Antigravity Statusline Quota Telemetry**:
