@@ -89,4 +89,5 @@ The following assets reside purely as physical files/directories on disk and are
 - `starship --version`: OK (v1.27.0).
 - `zsh -n ~/.zshrc`: OK (Syntax valid).
 - `title.sh` & `statusline.sh`: OK (Tested dry-run with stdin JSON, exit code 0).
+- `settings.json`: OK (Symlink verified pointing to `dotfiles/gemini/.../settings.json`, auto-reconcile in `scripts/stow.sh`).
 - Legacy directory: `~/dotfiles.bak_pre_jarvis` preserved.

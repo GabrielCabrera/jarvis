@@ -2,6 +2,14 @@
 
 All notable changes to the `jarvis` Control Plane are documented in this file.
 
+## [Unreleased] - 2026-10-30
+
+### Fixed
+- **Antigravity Settings Symlink Auto-Reconciliation**:
+  - Identified that Antigravity CLI performs atomic file writes via `rename(2)` when persisting allowed command permissions, replacing the destination symlink `~/.gemini/antigravity-cli/settings.json` with a regular file.
+  - Enhanced `scripts/stow.sh` with pre-flight reconciliation logic to automatically sync decoupled physical settings back to `dotfiles/gemini/` and restore symlinks cleanly without Stow conflict errors.
+  - Synced latest command permissions (`sed`, `ssh`, `find`, `scutil`, `docker`, `file`, etc.) to `dotfiles/gemini/.gemini/antigravity-cli/settings.json` and restored active symlink.
+
 ## [Unreleased] - 2026-10-29
 
 ### Changed

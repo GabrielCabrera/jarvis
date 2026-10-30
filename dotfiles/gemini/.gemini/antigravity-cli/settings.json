@@ -5,6 +5,7 @@
   "permissions": {
     "allow": [
       "command(cat)",
+      "command(sed)",
       "command(grep)",
       "command(op)",
       "command(ls)",
@@ -28,7 +29,16 @@
       "command(mkdir)",
       "command(ps)",
       "command(diff)",
-      "command(ln)"
+      "command(ssh)",
+      "command(ln)",
+      "command(find)",
+      "command(~/.gemini/antigravity-cli/statusline.sh)",
+      "command(printf)",
+      "command(~/.gemini/antigravity-cli/title.sh)",
+      "command(scutil)",
+      "command(docker)",
+      "command(file)",
+      "command(~/Developer/jarvis/scripts/stow.sh)"
     ]
   },
   "statusLine": {
