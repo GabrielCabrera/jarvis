@@ -2,27 +2,25 @@
 # ZSH ARCHITECTURE | HOST: MACBOOK PRO M3
 # ==============================================================================
 
-# --- 1. PRE-FLIGHT CHECKS & PATHS ---
+# --- 1. PRE-FLIGHT CHECKS, PATHS & RUNTIMES ---
 
 # Initialize Homebrew environment (Static paths for Apple Silicon to avoid subshell overhead)
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 fi
 
-# Essential Paths (Must be loaded before version managers)
+# Essential Static Paths (Loaded before version managers)
 export PATH="$HOME/.local/bin:$PATH"
 if [[ -d "$HOME/.antigravity-ide/antigravity-ide/bin" ]]; then
   export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
 fi
 
-# --- 2. CORE TOOLS INITIALIZATION ---
-
-# MISE (Version Manager) - Standard activation for shim stability
+# MISE (Version Manager) - Activates managed runtimes (Python, Ruby, uv, usage)
 if command -v mise &> /dev/null; then
   eval "$(mise activate zsh)"
 fi
 
-# --- 3. SHELL CONFIGURATION & HISTORY ---
+# --- 2. SHELL CONFIGURATION & HISTORY ---
 
 # Store history locally on local SSD to avoid iCloud sync loops, lockups and lag
 HISTFILE="$HOME/.zsh_history"
@@ -49,16 +47,25 @@ HISTORY_IGNORE="(ls(| *)|cd(| *)|pwd|exit|logout|clear|la(| *)|ll(| *)|c|history
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-# --- 4. MODULE LOADER ---
+# --- 3. MODULAR CONFIGURATION LOADER ---
+# Explicit, deterministic loading order:
+# 1. env.zsh       (XDG Base Directories, Toolchain flags, default editor)
+# 2. functions.zsh (Utility functions: upall, soft_clear, mkcd, docker_up)
+# 3. aliases.zsh   (Aliases that may bind to functions above)
+# 4. plugins.zsh   (Completions engine, compinit cache, autosuggestions, syntax-highlighting)
+ZSH_MODULES=("env" "functions" "aliases" "plugins")
+for module in "${ZSH_MODULES[@]}"; do
+  [[ -f "$HOME/.zsh/${module}.zsh" ]] && source "$HOME/.zsh/${module}.zsh"
+done
 
-# Load all modular configuration files from the .zsh directory
-if [[ -d "$HOME/.zsh" ]]; then
-  for config_file in "$HOME/.zsh/"*.zsh; do
-    source "$config_file"
-  done
-fi
+# --- 4. SECRETS & PROMPT INITIALIZATION ---
 
-# Load Private Secrets & API Keys (Strictly local, ignored by git)
+# Load Private Secrets & API Keys (Strictly local physical file, ignored by git)
 if [[ -f "$HOME/.zsh_secrets" ]]; then
   source "$HOME/.zsh_secrets"
+fi
+
+# Initialize Starship prompt (Must be triggered last to capture sanitized environmental state)
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
 fi

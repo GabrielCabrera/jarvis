@@ -86,7 +86,8 @@ The following assets reside purely as physical files/directories on disk and are
 - `mise ls`: OK (All runtimes active: python 3.15, ruby 4.0, uv 0.13, usage 7.1).
 - `uv --version`: OK (v0.13.6).
 - `starship --version`: OK (v1.27.0).
-- `zsh -n ~/.zshrc`: OK (Syntax valid).
+- `zsh -n ~/.zshrc`: OK (Syntax valid across all 4 modules: env, functions, aliases, plugins).
+- `zcompdump`: OK (Recompiled and compiled to `.zwc` bytecode).
 - `title.sh` & `statusline.sh`: OK (Tested dry-run with stdin JSON, exit code 0).
 - `settings.json`: OK (Symlink verified pointing to `dotfiles/gemini/.../settings.json`, auto-reconcile in `scripts/stow.sh`).
 - Legacy directory: `~/dotfiles.bak_pre_jarvis` preserved.

@@ -5,6 +5,11 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 ## [Unreleased] - 2026-10-30
 
 ### Changed
+- **Zsh Architecture Refactoring & Compinit Optimization**:
+  - Unified fragmented `exports.zsh` into `dotfiles/zsh/.zsh/env.zsh`, consolidating XDG Base Directory variables at the foundation of the shell lifecycle.
+  - Eliminated arbitrary alphabetical loading in `dotfiles/zsh/.zshrc`; replaced with deterministic ordered array loader: `env` -> `functions` -> `aliases` -> `plugins`.
+  - Fixed long-standing `compinit` globbing bug in `dotfiles/zsh/.zsh/plugins.zsh` by evaluating `(#qN.m-1)` into a typed array, restoring automated 24h cache revalidation and `.zwc` bytecode compilation.
+  - Relocated Starship prompt initialization from `plugins.zsh` to the final stage of `.zshrc`.
 - **Zsh Upall & Path Hygiene Hardening**:
   - Refactored `upall()` in `dotfiles/zsh/.zsh/functions.zsh` with defensive `command -v` guards for each tool (`gem`, `uv`, `npm`, `agy`, `claude`), preventing `command not found: npm` crashes after Node uninstallation.
   - Integrated `uv tool upgrade --all` into `upall()` to automate updates for Python-managed tools.
