@@ -11,6 +11,9 @@ fi
 
 # Essential Paths (Must be loaded before version managers)
 export PATH="$HOME/.local/bin:$PATH"
+if [[ -d "$HOME/.antigravity-ide/antigravity-ide/bin" ]]; then
+  export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
+fi
 
 # --- 2. CORE TOOLS INITIALIZATION ---
 
@@ -59,6 +62,3 @@ fi
 if [[ -f "$HOME/.zsh_secrets" ]]; then
   source "$HOME/.zsh_secrets"
 fi
-
-# Added by Antigravity IDE
-export PATH="/Users/gabriel/.antigravity-ide/antigravity-ide/bin:$PATH"

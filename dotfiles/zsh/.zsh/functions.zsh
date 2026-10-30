@@ -48,23 +48,38 @@ oops() {
 upall() {
     echo ""
     echo "🍺 Actualizando Homebrew..."
-    brew update; brew upgrade -y; brew cleanup
+    brew update && brew upgrade && brew cleanup
     
     echo ""
     echo "🛠️ Actualizando Mise y sus herramientas..."
-    mise self-update -y; mise upgrade
+    mise self-update -y && mise upgrade
     
-    echo ""
-    echo "💎 Actualizando Ruby Gems..."
-    gem update --system; gem update; gem cleanup
+    if command -v gem &> /dev/null; then
+      echo ""
+      echo "💎 Actualizando Ruby Gems..."
+      gem update --system && gem update && gem cleanup
+    fi
     
-    echo ""
-    echo "📦 Actualizando NPM Global..."
-    npm update -g
+    if command -v uv &> /dev/null; then
+      echo ""
+      echo "🐍 Actualizando herramientas de Python (uv)..."
+      uv tool upgrade --all 2>/dev/null || true
+    fi
+    
+    if command -v npm &> /dev/null; then
+      echo ""
+      echo "📦 Actualizando NPM Global..."
+      npm update -g
+    fi
     
     echo ""
     echo "🤖 Actualizando Agentes IA..."
-    agy update; claude update
+    if command -v agy &> /dev/null; then
+      agy update 2>/dev/null || true
+    fi
+    if command -v claude &> /dev/null; then
+      claude update 2>/dev/null || true
+    fi
     
     echo ""
     echo "✅ ¡Todo el sistema está actualizado!"

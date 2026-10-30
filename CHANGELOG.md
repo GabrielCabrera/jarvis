@@ -5,6 +5,11 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 ## [Unreleased] - 2026-10-30
 
 ### Changed
+- **Zsh Upall & Path Hygiene Hardening**:
+  - Refactored `upall()` in `dotfiles/zsh/.zsh/functions.zsh` with defensive `command -v` guards for each tool (`gem`, `uv`, `npm`, `agy`, `claude`), preventing `command not found: npm` crashes after Node uninstallation.
+  - Integrated `uv tool upgrade --all` into `upall()` to automate updates for Python-managed tools.
+  - Reordered PATH initialization in `dotfiles/zsh/.zshrc` to export static binary directories before `mise activate`, ensuring Mise runtimes take top priority in PATH.
+  - Sanitized legacy `~/dotfiles` path comments in `dotfiles/zsh/.zsh/env.zsh`.
 - **Mise Runtime Optimization & Lean Toolchain**:
   - Streamlined `dotfiles/config/.config/mise/config.toml` to a minimalist bare-metal setup: retained `python` (latest), `ruby` (latest), `usage` (latest), and added `uv` (v0.13.6).
   - Uninstalled redundant runtimes (`node`, `lua`, `rust`) from `~/.local/share/mise/installs/` to eliminate memory and disk overhead.

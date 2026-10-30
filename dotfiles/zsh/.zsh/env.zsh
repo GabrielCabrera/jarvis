@@ -1,8 +1,8 @@
 # ==============================================================================
 # PUBLIC ENVIRONMENT VARIABLES & PATHS
 # ==============================================================================
-# Este archivo es seguro para subir a GitHub (dentro de ~/dotfiles)
-# Aquí van variables de entorno generales, lenguajes, editores y binarios.
+# Managed via jarvis control plane
+# General environment variables, language flags, and toolchain optimizations.
 
 export EDITOR="nvim"
 export VISUAL="nvim"
