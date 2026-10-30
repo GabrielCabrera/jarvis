@@ -7,6 +7,7 @@
 ruby = "latest"    # Preferred language for personal scripts
 python = "latest"  # Systems automation and audits
 uv = "latest"      # Ultra-fast Python package installer and venv manager
+go = "latest"      # Modern Go runtime for cloud, tooling & SRE
 usage = "latest"   # Shell completions and CLI spec utility (~15MB)
 
 [settings]

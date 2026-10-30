@@ -4,6 +4,11 @@ All notable changes to the `jarvis` Control Plane are documented in this file.
 
 ## [Unreleased] - 2026-10-30
 
+### Added
+- **Go Runtime Integration (`go@latest`)**:
+  - Added `go = "latest"` to `dotfiles/config/.config/mise/config.toml` and installed Go v1.27.3 (`darwin/arm64`).
+  - Added `$HOME/go/bin` to essential PATH in `dotfiles/zsh/.zshrc` to support binaries installed via `go install`.
+
 ### Changed
 - **Zsh Architecture Refactoring & Compinit Optimization**:
   - Unified fragmented `exports.zsh` into `dotfiles/zsh/.zsh/env.zsh`, consolidating XDG Base Directory variables at the foundation of the shell lifecycle.

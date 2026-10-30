@@ -17,6 +17,7 @@
 ### Runtime & Language Tooling (`mise`)
 Configuration source: `~/.config/mise/config.toml` (managed via `jarvis/dotfiles/config/.config/mise/config.toml`)
 Active versions:
+- `go`: 1.27.3 (Latest stable)
 - `python`: 3.15.2 (Latest stable)
 - `ruby`: 4.0.9 (Latest stable)
 - `usage`: 7.1.3 (Latest stable)
@@ -83,7 +84,8 @@ The following assets reside purely as physical files/directories on disk and are
 - `ssh -G github.com`: OK (Resolves `ssh.github.com:443`, `user git`).
 - `ssh -G shortener`: OK (Resolves host in `ssh_hosts/realtime_shortener`).
 - `git config --list`: OK (Resolves commit GPG/SSH signing via 1Password and `allowed_signers`).
-- `mise ls`: OK (All runtimes active: python 3.15, ruby 4.0, uv 0.13, usage 7.1).
+- `mise ls`: OK (All runtimes active: go 1.27, python 3.15, ruby 4.0, uv 0.13, usage 7.1).
+- `go version`: OK (go1.27.3 darwin/arm64).
 - `uv --version`: OK (v0.13.6).
 - `starship --version`: OK (v1.27.0).
 - `zsh -n ~/.zshrc`: OK (Syntax valid across all 4 modules: env, functions, aliases, plugins).

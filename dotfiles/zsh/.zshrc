@@ -10,7 +10,7 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 fi
 
 # Essential Static Paths (Loaded before version managers)
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 if [[ -d "$HOME/.antigravity-ide/antigravity-ide/bin" ]]; then
   export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
 fi
