@@ -64,6 +64,8 @@ brew "stow"
 brew "tlrc"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Markup-based typesetting system
+brew "typst"
 # Network analyzer and capture tool - without graphical user interface
 brew "wireshark"
 # Fish-like fast/unobtrusive autosuggestions for zsh

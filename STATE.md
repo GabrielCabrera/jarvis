@@ -10,7 +10,7 @@
 ## 1. Tooling & Runtimes Inventory
 
 ### Package Management: Homebrew (`~/Developer/jarvis/Brewfile`)
-- **CLI Utilities & Infrastructure:** `age`, `ansible`, `awscli`, `azure-cli`, `bat`, `btop`, `colima`, `docker`, `docker-compose`, `eza`, `fzf`, `gh`, `git`, `glow`, `helm`, `jemalloc`, `jq`, `k9s`, `kubernetes-cli`, `kubeseal`, `tree-sitter`, `neovim`, `pandoc`, `protobuf`, `pwgen`, `restic`, `ripgrep`, `sops`, `sqlcmd`, `starship`, `stow`, `tlrc`, `tree-sitter-cli`, `wireshark`, `zsh-autosuggestions`, `zsh-syntax-highlighting` (33 formulas).
+- **CLI Utilities & Infrastructure:** `age`, `ansible`, `awscli`, `azure-cli`, `bat`, `btop`, `colima`, `docker`, `docker-compose`, `eza`, `fzf`, `gh`, `git`, `glow`, `helm`, `jemalloc`, `jq`, `k9s`, `kubernetes-cli`, `kubeseal`, `tree-sitter`, `neovim`, `pandoc`, `protobuf`, `pwgen`, `restic`, `ripgrep`, `sops`, `sqlcmd`, `starship`, `stow`, `tlrc`, `tree-sitter-cli`, `typst`, `wireshark`, `zsh-autosuggestions`, `zsh-syntax-highlighting` (37 formulas).
 - **Casks:** `1password-cli`, `font-jetbrains-mono-nerd-font` (2 casks).
 - **Node Tools:** None (purged unneeded corepack).
 
@@ -86,6 +86,7 @@ The following assets reside purely as physical files/directories on disk and are
 - `git config --list`: OK (Resolves commit GPG/SSH signing via 1Password and `allowed_signers`).
 - `mise ls`: OK (All runtimes active: go 1.27, python 3.15, ruby 4.0, uv 0.13, usage 7.1).
 - `go version`: OK (go1.27.3 darwin/arm64).
+- `typst --version`: OK (v0.15.1).
 - `uv --version`: OK (v0.13.6).
 - `starship --version`: OK (v1.27.0).
 - `zsh -n ~/.zshrc`: OK (Syntax valid across all 4 modules: env, functions, aliases, plugins).

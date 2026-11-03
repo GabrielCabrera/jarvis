@@ -2,6 +2,13 @@
 
 All notable changes to the `jarvis` Control Plane are documented in this file.
 
+## [Unreleased] - 2026-11-03
+
+### Added
+- **Typst Typesetting System (`typst`)**:
+  - Added `typst` formula (v0.15.1) to `Brewfile`.
+  - Installed `typst` via Homebrew for markdown-based document typesetting and PDF compilation.
+
 ## [Unreleased] - 2026-10-30
 
 ### Added

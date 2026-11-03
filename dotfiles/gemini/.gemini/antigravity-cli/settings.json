@@ -47,7 +47,8 @@
       "command(du)",
       "command(sleep)",
       "command(agy)",
-      "command(claude)"
+      "command(claude)",
+      "command(typst)"
     ]
   },
   "statusLine": {
@@ -65,6 +66,8 @@
     "/Users/gabriel/Developer/soa",
     "/Users/gabriel/Developer",
     "/Users/gabriel/Developer/yourls",
-    "/Users/gabriel/Developer/jarvis"
+    "/Users/gabriel/Developer/jarvis",
+    "/Users/gabriel/Developer/remo-tracker",
+    "/Users/gabriel/Developer/pdf"
   ]
 }
