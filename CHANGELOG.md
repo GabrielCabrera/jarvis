@@ -2,6 +2,16 @@
 
 All notable changes to the `jarvis` Control Plane are documented in this file.
 
+## [Unreleased] - 2026-11-04
+
+### Fixed
+- **Unattended Execution in `upall()`**:
+  - Enforced `HOMEBREW_NO_ASK=1` and `-y` flag on `brew upgrade` to eliminate interactive confirmation prompts (`[y/N]`) that halted shell execution.
+  - Added `-y` flag to `mise upgrade` to ensure fully automated runtime updates without interactive blocks.
+  - Piped non-blocking confirmation to `gem cleanup` to prevent hanging on binary/executable prompts.
+- **Mise Deprecation Warning**:
+  - Removed deprecated `always_keep_download = false` from `dotfiles/config/.config/mise/config.toml`, adopting Mise 2026+ native automatic download cache management and eliminating startup warnings.
+
 ## [Unreleased] - 2026-11-03
 
 ### Added

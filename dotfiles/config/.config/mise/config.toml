@@ -18,7 +18,6 @@ not_found_auto_install = false  # Explicit behavior: fail if tool is missing
 
 # Performance Optimization (Apple Silicon M3 Pro)
 jobs = 8                        # Parallel tasks / compile jobs
-always_keep_download = false    # Clean download cache immediately
 env_cache = true                # Cache environment calculations for faster cd
 
 # Ecosystem Integrations

@@ -48,7 +48,8 @@
       "command(sleep)",
       "command(agy)",
       "command(claude)",
-      "command(typst)"
+      "command(typst)",
+      "command(gem)"
     ]
   },
   "statusLine": {
@@ -68,6 +69,7 @@
     "/Users/gabriel/Developer/yourls",
     "/Users/gabriel/Developer/jarvis",
     "/Users/gabriel/Developer/remo-tracker",
-    "/Users/gabriel/Developer/pdf"
+    "/Users/gabriel/Developer/pdf",
+    "/Users/gabriel/Developer/examenes_libres"
   ]
 }

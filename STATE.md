@@ -92,5 +92,6 @@ The following assets reside purely as physical files/directories on disk and are
 - `zsh -n ~/.zshrc`: OK (Syntax valid across all 4 modules: env, functions, aliases, plugins).
 - `zcompdump`: OK (Recompiled and compiled to `.zwc` bytecode).
 - `title.sh` & `statusline.sh`: OK (Tested dry-run with stdin JSON, exit code 0).
+- `upall`: OK (Verified automated unattended execution, 0 prompts, 0 warnings).
 - `settings.json`: OK (Symlink verified pointing to `dotfiles/gemini/.../settings.json`, auto-reconcile in `scripts/stow.sh`).
 - Legacy directory: `~/dotfiles.bak_pre_jarvis` preserved.

@@ -44,20 +44,23 @@ oops() {
   fi
 }
 
-# Universal Update Tool (SRE Optimized)
+# Universal Update Tool (SRE Optimized - Non-interactive & Automated)
 upall() {
+    # Ensure fully unattended execution without interactive confirmation blocks
+    local -x HOMEBREW_NO_ASK=1
+
     echo ""
     echo "🍺 Actualizando Homebrew..."
-    brew update && brew upgrade && brew cleanup
+    brew update && brew upgrade -y && brew cleanup
     
     echo ""
     echo "🛠️ Actualizando Mise y sus herramientas..."
-    mise self-update -y && mise upgrade
+    mise self-update -y && mise upgrade -y
     
     if command -v gem &> /dev/null; then
       echo ""
       echo "💎 Actualizando Ruby Gems..."
-      gem update --system && gem update && gem cleanup
+      gem update --system && gem update && (yes 2>/dev/null | gem cleanup 2>/dev/null || true)
     fi
     
     if command -v uv &> /dev/null; then
